@@ -1,73 +1,56 @@
 <template>
   <div class="go-in">
-    <banner img="../assets/img/bgtop.jpg" title="走进安澜" />
-    <div class="section">
-      <div class="section-content">
-        <div class="content-summary">
-          <div class="about-wp">
-            <img src="../assets/img/about1.png" />
-            <img src="../assets/img/about2.png" />
-            <img src="../assets/img/about3.png" />
-            <img src="../assets/img/about4.png" />
-            <img src="../assets/img/about5.png" />
-            <img src="../assets/img/about6.png" />
-            <img src="../assets/img/about7.png" />
-          </div>
-        </div>
-        <!-- <el-divider class="el-divider-active">
-          <i class="el-icon-arrow-down el-icon-arrow-down-active"></i>
-        </el-divider>
-        <div class="content-culture">
-          <h3>企业文化</h3>
-          <h3>CULTURE</h3>
-          <p>我们只专注一件事情——工程项目管理</p>
-          <span>确保工程无重大安全事故</span>
-          <span>确保工程施工单位无大面积返工</span>
-          <span>确保工程材料及设备无伪劣产品</span>
-          <span>确保工程管理留下痕迹、实施过程可追溯</span>
-        </div> -->
-        <!-- 公司荣誉 -->
-        <!-- <div class="content-honor">
-          <div class="honor-big-img">
-            <el-dialog :title="dialogTitle" :visible.sync="dialogTableVisible">
-              <img v-lazy="dialogUrl" alt />
-            </el-dialog>
-          </div>
-          <div class="top">
-            <h3>公司荣誉</h3>
-            <p>HONOR</p>
-            <div class="border"></div>
-          </div>
-          <ul class="honor-show">
-            <li v-for="(honor, index) in honorList" :key="index">
-              <img
-                v-lazy="imgserver + honor.Img"
-                @click="
-                  dialogTableVisible = true;
-                  dialogUrl = imgserver + honor.Img;
-                  dialogTitle = honor.Remark;
-                "
-              />
-            </li>
-          </ul>
-          <p>点击图片查看大图</p>
-        </div> -->
-        <!-- 团队风采 -->
-        <!-- <div class="content-team">
-          <div class="top">
-            <h3>团队风采</h3>
-            <p>TEAM</p>
-          </div>
-          <el-carousel :interval="4000" type="card">
-            <el-carousel-item v-for="(team, index) in teamItem" :key="index">
-              <div
-                class="swiper-img"
-                v-lazy:background-image="imgserver + team.Img"
-              ></div>
-            </el-carousel-item>
-          </el-carousel>
-        </div> -->
+    <banner
+      :img="require('../assets/img/case/bgtop1.jpg')"
+      title="走进安澜"
+      subtitle="工业自动化设备整线系统方案的提供商"
+    />
+    <div class="intro">
+      <div class="title">安澜自动化科技有限公司</div>
+      <div class="content">
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;安澜自动化科技有限公司成立于2019年4月，总部位于江苏苏州新加坡工业园区，安徽芜湖设有分公司，是一家专业提供汽车电子行业非标自动化设备装配、测试解决方案的高新技术企业。
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;公司成立以来，
+          一直以为客户提供测试、装配及自动化服务为己任，专注于数据采集和控制、机器视觉、运动控制、射频测试技术、系统集成，
+          服务于汽车、消费电子、通信、电力、工业现场控制等各种领域。
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;公司基于西门子、NI虚拟仪器技术强大的软硬件平台，为广大客户提供全方位的技术服务：从完整的交钥匙工程到双方合作，其中包括搭建工艺系统的技术咨询、售前售后技术支持、系统开发需求分析、系统总体设计、系统应用软件开发、系统的硬件设计，
+          包括电气和机械设计，以及最终的安装和调试、人员技术培训等各项业务，针对不同客户的需求，提供专业的培训课程。
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;公司拥有一支高素质、雄厚的技术团队,专业技术力量雄厚、经验丰富、软件开发、电子系统硬件设计,机械结构设计、完整的电气设计方案的设计能力。安澜践行“让人不再像机器一样干活、让机器努力像人一样工作”的企业使命，为自动化行业从“机器换人”到智能制造而不懈奋进。
+        </p>
       </div>
+    </div>
+
+    <div class="culture">
+      <div class="title">企业文化</div>
+      <div class="content">
+        <div class="subtitle">保持创业精神</div>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;今天，安澜自动化依然处于创业阶段，依旧需要大家继续发扬“百折不挠，愈战愈勇”的创业精神。我们的企业也是有韧度和潜力的，在成长的过程中，我们会遭遇困难，挑战，痛苦，甚至失败，但只要我们勇敢面对，团结一心，目标一致，我们的企业就会向前发展！过去，我们共同奋斗的经历和成长就是最有力的验证；未来，我们更应如此。
+        </p>
+        <div class="subtitle">为客户创造价值</div>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;客户永远是我们企业最重要的合作伙伴，理解客户需求，满足客户需求，超越客户需求，与我们每个员工的工作息息相关。任正非说过：我们把煤炭洗的白白的，但这对客户没产生价值。同样的道理，我们把一个产品做的很复杂，耗费了很大的精力，用户根本不去用，一样是没有价值。
+        </p>
+        <div class="subtitle">我们的奋斗目标</div>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;做到高层次的工业4.0、智能制造技术应用及全面的解决方案，以卓越的研发、创新能力为强大的硬件平台；并致力供应链物流管理模式下的系统规划、装备制造、系统集成与资源整合，帮助客户企业导入国内外优质导师资源，全方位提升客户企业的竞争力。
+        </p>
+      </div>
+    </div>
+    <div class="course">
+      <div class="title">发展历程</div>
+      <img src="@/assets/img/goin/course.png" alt="" />
+    </div>
+
+    <div class="architecture">
+      <div class="title">组织架构</div>
+      <img src="@/assets/img/goin/architecture.png" alt="" />
     </div>
   </div>
 </template>
@@ -108,274 +91,71 @@ export default {
 .go-in {
   width: 100%;
   height: 100%;
-  background-color: #14679f;
+  background-color: #fff;
   position: relative;
   overflow: hidden;
-  .section {
-    width: 100%;
-    &-content {
-      width: 1240px;
-      margin: 0 auto;
-      background-color: #fff;
-
-      .content-summary {
-        //height: 500px;
-        display: flex;
-        justify-content: space-around;
-        .about-wp {
-          img {
-            width: 100%;
-          }
-        }
-        .summary-left {
-          width: 600px;
-          .title {
-            font-size: 25px;
-            color: #e13834;
-          }
-          .eTitle {
-            font-size: 17px;
-            color: #e13834;
-            padding: 20px 0;
-          }
-          .content {
-            color: #14679f;
-            font-size: 14px;
-            text-indent: 25px;
-            line-height: 30px;
-          }
-        }
-
-        .summary-right {
-          width: 400px;
-          height: 310px;
-          border: 2px solid #1d42b9;
-          //animation: imgboxkey 4s infinite;
-          border-radius: 10px;
-          margin-top: 80px;
-          text-align: center;
-
-          img {
-            width: 360px;
-            height: 270px;
-            margin-top: 20px;
-            //animation: imgbo 4s infinite;
-          }
-        }
-      }
-
-      //发展历程
-      .content-course {
-        padding: 50px 0;
-        .course-time {
-          width: 1000px;
-          height: 400px;
-          margin: 20px auto;
-          .swiper-container {
-            height: 100%;
-          }
-          .time-show {
-            width: 700px;
-            height: 100%;
-            margin: 0 auto;
-            display: flex;
-            .time-show-item {
-              width: 350px;
-              height: 100%;
-              overflow: hidden;
-              display: flex;
-              flex-direction: column;
-
-              .item-top,
-              .item-bottom {
-                height: 190px;
-              }
-              .item-bottom {
-                // display: flex;
-                // align-content: center;
-                .item-bottom-content {
-                  background-color: #1667a0;
-                  margin: 20px 0;
-                  p {
-                    color: #fff;
-                    text-align: center;
-                    padding: 15px;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      //企业文化
-      .content-culture {
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding-left: 100px;
-        background-color: #c2daeb;
-        h3 {
-          color: #3c6088;
-          font-size: 26px;
-        }
-        p {
-          color: #3c6088;
-          font-size: 26px;
-          padding: 5px 0;
-        }
-        span {
-          font-weight: 400;
-          line-height: 36px;
-          font-size: 18px;
-          padding: 5px 0;
-        }
-      }
-
-      //公司荣誉
-      .content-honor {
-        padding: 50px 0;
-        .honor-show {
-          width: 1000px;
-          margin: 30px auto;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: flex-start;
-          align-content: flex-start;
-
-          li {
-            width: 220px;
-            height: 320px;
-            margin-left: 15px;
-            list-style: none;
-            border: 1px solid palegoldenrod;
-
-            img {
-              width: 100%;
-              height: 100%;
-            }
-          }
-        }
-        p {
-          text-align: center;
-          color: #3c6088;
-        }
-      }
-
-      //团队风采
-      .content-team {
-        padding: 50px 100px;
-        .swiper-img {
-          height: 400px;
-          background: no-repeat center;
-          background-size: cover;
-        }
-      }
+  .intro {
+    width: 1240px;
+    margin: 30px auto;
+    .title {
+      font-size: 35px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .content {
+      font-size: 18px;
+      color: #777;
+      line-height: 30px;
     }
   }
-}
 
-@keyframes imgboxkey {
-  0% {
-    border: solid rgb(29, 66, 185) 2px;
+  .culture {
+    width: 1240px;
+    margin: 30px auto;
+    .title {
+      font-size: 35px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .content {
+      font-size: 18px;
+      color: #777;
+      line-height: 30px;
+    }
+    .subtitle {
+      font-size: 22px;
+      color: #555;
+      margin: 20px 0;
+    }
   }
-  40% {
-    border: solid rgb(255, 255, 255) 2px;
-  }
-  60% {
-    border: solid rgb(255, 255, 255) 2px;
-  }
-  100% {
-    border: solid rgb(29, 66, 185) 2px;
-  }
-}
 
-@keyframes imgbo {
-  0% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px 0px #ababab;
+  .course {
+    width: 1240px;
+    margin: 30px auto;
+    .title {
+      font-size: 35px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    img {
+      width: 100%;
+    }
   }
-  50% {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 5px #ababab;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0px 0px 0px 0px #ababab;
-  }
-}
-.el-divider--horizontal {
-  margin: 1px 0;
-}
 
-.top {
-  h3,
-  p {
-    text-align: center;
-    color: #3c6088;
-    font-weight: 400;
-    padding: 10px 0;
-  }
-  h3 {
-    font-size: 30px;
-  }
-  p {
-    font-size: 20px;
-  }
-  .border {
-    border-bottom: 1px solid #3c6088;
-    width: 15%;
-    margin: 0 auto;
-  }
-}
-// .swiper-button-disabled {
-//   display: none;
-// }
-.order {
-  order: -1;
-}
-.order-top {
-  order: 1;
-}
-.el-divider {
-  background-color: red;
-  height: 3px;
-  .el-divider__text {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    padding: 0px;
-    color: #fff;
-    border: 3px solid red;
-  }
-}
-.el-divider-active {
-  background-color: #3c6088;
-}
-.honor-big-img {
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  text-align: center;
-  padding-bottom: 20px;
-  padding: 5%;
-  //background-color: #14679f;
-  .el-dialog__wrapper {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: auto;
-    margin: 0;
-
-    .el-dialog__body {
-      overflow: hidden;
-      img {
-        width: 100%;
-      }
+  .architecture {
+    width: 1240px;
+    margin: 30px auto;
+    .title {
+      font-size: 35px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    img {
+      width: 100%;
     }
   }
 }

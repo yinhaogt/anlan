@@ -27,10 +27,26 @@
           <ul class="content-nav">
             <li>
               <p>走进安澜</p>
-              <span>公司简介</span>
-              <span>团队建设</span>
-              <span>企业文化</span>
-              <span>企业愿景</span>
+              <span>
+                <router-link :to="{ path: '/goin', query: { type: '1' } }">
+                  公司简介
+                </router-link>
+              </span>
+              <span>
+                <router-link :to="{ path: '/goin', query: { type: '2' } }">
+                  企业文化
+                </router-link>
+              </span>
+              <span>
+                <router-link :to="{ path: '/goin', query: { type: '1' } }">
+                  发展历程
+                </router-link>
+              </span>
+              <span>
+                <router-link :to="{ path: '/goin', query: { type: '2' } }">
+                  组织架构
+                </router-link>
+              </span>
             </li>
             <li>
               <p>产品中心</p>
@@ -42,6 +58,19 @@
               <span>
                 <router-link :to="{ path: '/product', query: { type: '2' } }">
                   自动化工作站
+                </router-link>
+              </span>
+            </li>
+            <li>
+              <p>加入我们</p>
+              <span>
+                <router-link :to="{ path: '/join', query: { type: '1' } }">
+                  团建照片
+                </router-link>
+              </span>
+              <span>
+                <router-link :to="{ path: '/join', query: { type: '2' } }">
+                  招聘信息
                 </router-link>
               </span>
             </li>

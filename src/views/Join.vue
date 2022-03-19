@@ -1,23 +1,49 @@
 <template>
   <div class="news">
-    <banner title="加入我们" />
+    <banner :img="require('../assets/img/join/header.png')" />
     <div class="news-section">
       <div class="news-section-content">
         <div class="content-nav">
           <div
             class="content-nav-btn"
-            :class="{'content-nav-active':newstype == 1}"
+            :class="{ 'content-nav-active': newstype == 1 }"
             @click="newstype = 1"
           >
-            <span>招聘职位</span>
+            <span>团队建设</span>
           </div>
           <div
             class="content-nav-btn"
-            :class="{'content-nav-active':newstype == 2}"
-            @click="newstype = 2 "
+            :class="{ 'content-nav-active': newstype == 2 }"
+            @click="newstype = 2"
           >
-            <span>人才理念</span>
+            <span>招聘信息</span>
           </div>
+        </div>
+
+        <div class="content-main">
+          <template v-if="newstype == 1">
+            <swiper :options="swiperOption" :key="1">
+              <swiper-slide class="swiper-slide slide-one"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-two"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-three"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-four"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-five"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-six"> </swiper-slide>
+              <div class="swiper-pagination" slot="pagination"></div>
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
+          </template>
+          <template v-else>
+            <el-table :data="tableData" style="width: 100%">
+              <el-table-column prop="name" label="岗位名称"> </el-table-column>
+              <el-table-column prop="education" label="学历要求">
+              </el-table-column>
+              <el-table-column prop="experience" label="经验要求">
+              </el-table-column>
+              <el-table-column prop="salary" label="薪资"> </el-table-column>
+            </el-table>
+          </template>
         </div>
       </div>
     </div>
@@ -29,23 +55,75 @@ import Banner from "../components/Banner";
 export default {
   name: "join",
   components: {
-    Banner
+    Banner,
   },
   data() {
     return {
-      newstype: 1
+      newstype: 1,
+      swiperOption: {
+        spaceBetween: 30,
+        loop: true,
+        autoplay: true,
+        speed: 1500,
+        effect: "coverflow",
+        slidesPerView: 2,
+        centeredSlides: true,
+        coverflowEffect: {
+          rotate: 30,
+          stretch: 10,
+          depth: 60,
+          modifier: 2,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+      tableData: [
+        {
+          name: "非标机械设计",
+          education: "不限",
+          experience: "不限",
+          salary: "15k-20k *13",
+        },
+        {
+          name: "机械设计",
+          education: "不限",
+          experience: "不限",
+          salary: "6k-8k *13",
+        },
+        {
+          name: "电气工程师",
+          education: "大专及以上",
+          experience: "3年以上",
+          salary: "面议",
+        },
+        {
+          name: "钳工",
+          education: "不限",
+          experience: "不限",
+          salary: "面议",
+        },
+        {
+          name: "电工",
+          education: "不限",
+          experience: "不限",
+          salary: "面议",
+        },
+      ],
     };
   },
-  methods: {
-
-  },
+  methods: {},
   mounted() {
-  },
-  watch: {
-    newstype(type) {
-      window.console.log(type);
+    if (this.$route.query.type) {
+      this.newstype = this.$route.query.type;
     }
-  }
+  },
 };
 </script>
 
@@ -57,7 +135,7 @@ export default {
 .news {
   width: 100%;
   height: 100%;
-  background-color: #14679f;
+  background-color: #e4e4e4;
   position: relative;
   overflow: hidden;
 
@@ -99,90 +177,35 @@ export default {
           color: #fff;
         }
       }
-
-      .content-nav-item {
-        width: 1070px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        //border: 1px solid blue;
-
-        .item-list {
-          width: 330px;
-          height: 500px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          margin: 10px 10px;
-          border: 1px solid #15669e;
-
-          &:hover {
-            border: 1px solid #fff;
-            box-shadow: 0 0 5px 2px #bfd3e0;
-          }
-          .item-img {
-            width: 300px;
-            height: 210px;
-            background-color: #cecece;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            background-origin: content-box;
-          }
-
-          &-title {
-            width: 300px;
-            height: 60px;
-            color: #15669e;
-            font-size: 22px;
-            padding: 0 10px;
-            margin: 20px 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            border-left: 1px solid #15669e;
-          }
-
-          &-content {
-            width: 273px;
-            height: 100px;
-            font-size: 14px;
-            color: gray;
-
-            // 文本长度处理 begin
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 5;
-            -webkit-box-orient: vertical;
-            white-space: normal !important;
-            word-wrap: break-word;
-            // 文本长度处理 ending
-          }
-
-          &-more {
-            width: 273px;
-            padding-top: 20px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-
-            img {
-              width: 12px;
-              height: 12px;
-            }
-            span {
-              color: #e13834;
-              padding: 0 5px;
-            }
-          }
+      .content-main {
+        padding: 0 20px;
+        padding-bottom: 20px;
+        .swiper-slide {
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 600px;
+        }
+        .slide-one {
+          background-image: url(../assets/img/join/trip1.jpg);
+        }
+        .slide-two {
+          background-image: url(../assets/img/join/trip2.jpg);
+        }
+        .slide-three {
+          background-image: url(../assets/img/join/trip3.jpg);
+        }
+        .slide-four {
+          background-image: url(../assets/img/join/trip4.jpg);
+        }
+        .slide-five {
+          background-image: url(../assets/img/join/trip5.jpg);
+        }
+        .slide-six {
+          background-image: url(../assets/img/join/trip6.jpg);
         }
       }
     }
-  }
-  .text-decoration {
-    text-decoration: none;
   }
 }
 </style>

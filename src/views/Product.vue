@@ -23,8 +23,8 @@
           </div>
         </div>
         <div class="content-main">
-          <template v-if="newstype === 1">
-            <swiper :options="swiperOption">
+          <template v-if="newstype == 1">
+            <swiper :options="swiperOption" :key="1">
               <swiper-slide class="swiper-slide slide-one"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-two"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-three"> </swiper-slide>
@@ -36,7 +36,7 @@
             </swiper>
           </template>
           <template v-else>
-            <swiper :options="swiperOption">
+            <swiper :options="swiperOption" :key="2">
               <swiper-slide class="swiper-slide slide-1"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-2"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-3"> </swiper-slide>
@@ -153,7 +153,7 @@ export default {
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;
-          height: 400px;
+          height: 600px;
         }
         .slide-one {
           background-image: url(../assets/img/product/product1.jpg);
@@ -169,6 +169,30 @@ export default {
         }
         .slide-five {
           background-image: url(../assets/img/product/product5.jpg);
+        }
+        .slide-1 {
+          background-image: url(../assets/img/product/product6.jpg);
+        }
+        .slide-2 {
+          background-image: url(../assets/img/product/product7.jpg);
+        }
+        .slide-3 {
+          background-image: url(../assets/img/product/product11.png);
+        }
+        .slide-4 {
+          background-image: url(../assets/img/product/product12.png);
+        }
+        .slide-5 {
+          background-image: url(../assets/img/product/product13.png);
+        }
+        .slide-6 {
+          background-image: url(../assets/img/product/product14.png);
+        }
+        .slide-7 {
+          background-image: url(../assets/img/product/product15.png);
+        }
+        .slide-8 {
+          background-image: url(../assets/img/product/product16.png);
         }
       }
     }

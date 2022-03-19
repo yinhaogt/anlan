@@ -15,11 +15,6 @@ let anlanrouter = new Router({
       component: () => import('./views/News.vue'),
     },
     {
-      path: '/newsdetails/:id',
-      name: 'newsdetails',
-      component: () => import('./views/NewsDetails.vue'),
-    },
-    {
       path: '/product',
       name: 'product',
       component: () => import('./views/Product.vue'),
@@ -28,11 +23,6 @@ let anlanrouter = new Router({
       path: '/case',
       name: 'case',
       component: () => import('./views/Case.vue')
-    },
-    {
-      path: '/casedetails/:id',
-      name: 'casedetails',
-      component: () => import('./views/CaseDetails.vue')
     },
     {
       path: '/goin',

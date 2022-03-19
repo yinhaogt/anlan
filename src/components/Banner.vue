@@ -1,11 +1,8 @@
 <template>
   <div class="banner">
-    <div class="mm"></div>
-    <div class="banner-img">
-      <img :src="img" />
-    </div>
-    <div class="banner-title">
-      <p>{{title}}</p>
+    <div class="banner-img" :style="{ 'background-image': 'url(' + img + ')' }">
+      <div class="title">{{ title }}</div>
+      <div class="subtitle">{{ subtitle }}</div>
     </div>
   </div>
 </template>
@@ -16,13 +13,16 @@ export default {
   props: {
     title: {
       type: String,
-      default: ""
+      default: "",
+    },
+    subtitle: {
+      type: String,
+      default: "",
     },
     img: {
       type: String,
-      default: "../assets/img/bgtop.jpg"
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -34,37 +34,20 @@ export default {
   position: relative;
   overflow: hidden;
   background-color: #fff;
-
-  // .mm {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-
-  //   padding: 10px;
-  //   margin: -10px;
-  //   filter: blur(10px);
-
-  //   background-image: url(../assets/img/bgtop1.jpg);
-  //   background-position: center;
-  //   background-size: 100%;
-  // }
-
-  img {
-    position: absolute;
-    //width: 1240px;
-    height: 100%;
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-
-  &-title {
-    position: absolute;
-    color: #fff;
-    font-size: 45px;
-    font-weight: 400;
-    line-height: 300px;
-    text-align: center;
+  .banner-img {
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    font-size: 45px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .subtitle {
+      font-size: 28px;
+    }
   }
 }
 </style>

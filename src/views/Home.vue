@@ -14,7 +14,7 @@
         <div>精品展示</div>
         <div class="en-name">PRODUCTS</div>
       </div>
-      <div class="product-item-wp">
+      <div class="product-item-wp prdwp">
         <div class="product-item">
           <img src="../assets/img/home/product1.jpg" />
         </div>
@@ -30,13 +30,13 @@
       </div>
       <div class="product-item-wp">
         <div class="product-item">
-          <img src="../assets/img/home/client.png" />
+          <img src="../assets/img/home/client.jpg" />
         </div>
       </div>
     </div>
   </div>
 </template>
- 
+
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
@@ -66,7 +66,7 @@ export default {
   },
 };
 </script>
- 
+
 <style lang="scss" scoped>
 /* .el-header {
   position: absolute;
@@ -79,6 +79,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  height: 500px;
 
   .page {
     text-align: center;
@@ -102,22 +103,18 @@ export default {
 .slide-one {
   background: url(../assets/img/home/loop1.jpg) no-repeat top;
   background-size: cover;
-  height: 600px;
 }
 .slide-two {
-  background: url(../assets/img/home/loop2.jpg) no-repeat center;
+  background: url(../assets/img/home/loop2.jpg) no-repeat top;
   background-size: cover;
-  height: 600px;
 }
 .slide-three {
-  background: url(../assets/img/home/loop3.png) no-repeat center;
+  background: url(../assets/img/home/loop3.jpg) no-repeat center;
   background-size: cover;
-  height: 600px;
 }
 .slide-four {
-  background: url(../assets/img/home/loop5.jpeg) no-repeat center;
+  background: url(../assets/img/home/loop4.png) no-repeat center;
   background-size: cover;
-  height: 600px;
 }
 
 .product-wp {
@@ -145,6 +142,10 @@ export default {
         display: block;
       }
     }
+  }
+  .prdwp {
+    height: 32vw;
+    overflow: hidden;
   }
 }
 </style>

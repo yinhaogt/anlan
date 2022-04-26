@@ -1,118 +1,129 @@
 <template>
   <div class="case">
-    <banner :img="require('../assets/img/case/bgtop1.jpg')" title="经典案例" />
-    <!-- <div class="case-section" v-loading="loading">
+    <banner :img="require('../assets/img/case/header.jpg')" />
+    <div class="case-section">
       <div class="case-section-content">
-        <div class="case-section-content-list" v-for="(cas,index) in caseList" :key="index">
-          <img v-lazy="imgserver+cas.Img" />
-          <div class="content-list-abstract" :class="{'abstract-active' : index%2!=1}">
-            <p class="abstract-title">{{cas.Title}}</p>
-            <p class="abstract-content">{{cas.Content}}</p>
-            <div class="more">
-              <router-link
-                class="text-decoration"
-                :to="{ name: 'casedetails', params: { id: cas.Id }}"
-              >
-                <span>more</span>
-                <img src="../assets/img/sanjiao.png" />
-              </router-link>
-            </div>
+        <div class="content-nav">
+          <div
+            class="content-nav-btn"
+            :class="{ 'content-nav-active': activeTab == 1 }"
+            @click="activeTab = 1"
+          >
+            <span>装配</span>
+          </div>
+          <div
+            class="content-nav-btn"
+            :class="{ 'content-nav-active': activeTab == 2 }"
+            @click="activeTab = 2"
+          >
+            <span>视觉检测</span>
+          </div>
+          <div
+            class="content-nav-btn"
+            :class="{ 'content-nav-active': activeTab == 3 }"
+            @click="activeTab = 3"
+          >
+            <span>激光焊接</span>
+          </div>
+          <div
+            class="content-nav-btn"
+            :class="{ 'content-nav-active': activeTab == 4 }"
+            @click="activeTab = 4"
+          >
+            <span>测试功能</span>
           </div>
         </div>
+        <div class="content-main">
+          <img v-if="activeTab === 4" src="../assets/img/case/1.jpg" alt="" />
+          <img
+            v-else-if="activeTab === 3"
+            src="../assets/img/case/2.jpg"
+            alt=""
+          />
+          <img
+            v-else-if="activeTab === 2"
+            src="../assets/img/case/3.png"
+            alt=""
+            :style="{ width: '80%' }"
+          />
+          <img
+            v-else-if="activeTab === 1"
+            src="../assets/img/case/4.png"
+            alt=""
+          />
+        </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
 import Banner from "../components/Banner";
 export default {
   components: {
-    Banner
+    Banner,
   },
   data() {
     return {
-      loading: true,
-      caseList: []
+      activeTab: 1,
     };
   },
-  mounted() {
-  
-  }
+  mounted() {},
 };
 </script>
 
- <style lang="scss" scoped>
+<style lang="scss" scoped>
 .case {
   width: 100%;
   height: 100%;
+  background-color: #ededed;
   position: relative;
   overflow: hidden;
-  background-color: #14679f;
 
   &-section {
     width: 100%;
+    //height: 1600px;
+
     &-content {
       width: 1240px;
-      min-height: 1000px;
+      //height: 1600px;
       margin: 0 auto;
       background-color: #fff;
+      // border: 1px solid red;
 
-      &-list {
-        width: 100%;
-        height: 500px;
+      .content-nav {
+        width: 800px;
+        height: 55px;
+        margin: 0 auto;
         display: flex;
-        justify-content: center;
+        //justify-content: center;
         align-items: center;
-        border: 1px solid pink;
+        position: relative;
+        bottom: 30px;
+        // border: 1px solid red;
 
-        img {
-          width: 612px;
-          height: 314px;
-        }
-        .content-list-abstract {
-          width: 290px;
-          height: 350px;
-          padding: 0 20px;
+        &-btn {
+          width: 25%;
+          height: 100%;
           display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          .abstract-title {
-            line-height: 30px;
-            font-size: 22px;
-            color: #e13834;
-          }
-          .abstract-content {
-            height: 150px;
-            color: #484848;
-            font-size: 15px;
-
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 7;
-            -webkit-box-orient: vertical;
-            white-space: normal !important;
-            word-wrap: break-word;
-            //border: 1px solid pink;
-          }
-          .more {
-            display: flex;
-            justify-content: flex-start;
-            .text-decoration {
-              text-decoration: none;
-
-              span {
-                color: #000;
-              }
-              img {
-                width: 12px;
-                height: 12px;
-              }
-            }
-          }
+          align-items: center;
+          justify-content: center;
+          background-color: #e4e4e4;
+          transition: all 0.2s;
+          cursor: pointer;
         }
-        .abstract-active {
-          order: -1;
+
+        .content-nav-active {
+          background-color: #409eff;
+          color: #fff;
+        }
+      }
+
+      .content-main {
+        padding: 0 20px;
+        padding-bottom: 20px;
+        text-align: center;
+        img {
+          width: 100%;
         }
       }
     }

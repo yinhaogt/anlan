@@ -30,6 +30,7 @@
               <swiper-slide class="swiper-slide slide-three"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-four"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-five"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-six"> </swiper-slide>
               <div class="swiper-pagination" slot="pagination"></div>
               <div class="swiper-button-prev" slot="button-prev"></div>
               <div class="swiper-button-next" slot="button-next"></div>
@@ -45,6 +46,12 @@
               <swiper-slide class="swiper-slide slide-6"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-7"> </swiper-slide>
               <swiper-slide class="swiper-slide slide-8"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-9"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-10"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-11"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-12"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-13"> </swiper-slide>
+              <swiper-slide class="swiper-slide slide-14"> </swiper-slide>
               <div class="swiper-pagination" slot="pagination"></div>
               <div class="swiper-button-prev" slot="button-prev"></div>
               <div class="swiper-button-next" slot="button-next"></div>
@@ -96,6 +103,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/deep/ .banner {
+  .banner-img {
+    background-position: top !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -159,40 +171,61 @@ export default {
           background-image: url(../assets/img/product/product1.jpg);
         }
         .slide-two {
-          background-image: url(../assets/img/product/product2.jpg);
-        }
-        .slide-three {
-          background-image: url(../assets/img/product/product3.jpg);
-        }
-        .slide-four {
           background-image: url(../assets/img/product/product4.jpg);
         }
+        .slide-three {
+          background-image: url(../assets/img/product/3.jpg);
+        }
+        .slide-four {
+          background-image: url(../assets/img/product/4.jpg);
+        }
         .slide-five {
-          background-image: url(../assets/img/product/product5.jpg);
+          background-image: url(../assets/img/product/5.jpg);
+        }
+        .slide-six {
+          background-image: url(../assets/img/product/6.jpg);
         }
         .slide-1 {
-          background-image: url(../assets/img/product/product6.jpg);
+          background-image: url(../assets/img/product/2/1.jpg);
         }
         .slide-2 {
-          background-image: url(../assets/img/product/product7.jpg);
+          background-image: url(../assets/img/product/2/2.jpg);
         }
         .slide-3 {
-          background-image: url(../assets/img/product/product11.png);
+          background-image: url(../assets/img/product/2/3.png);
         }
         .slide-4 {
-          background-image: url(../assets/img/product/product12.png);
+          background-image: url(../assets/img/product/2/4.jpg);
         }
         .slide-5 {
-          background-image: url(../assets/img/product/product13.png);
+          background-image: url(../assets/img/product/2/5.png);
         }
         .slide-6 {
-          background-image: url(../assets/img/product/product14.png);
+          background-image: url(../assets/img/product/2/6.jpg);
         }
         .slide-7 {
-          background-image: url(../assets/img/product/product15.png);
+          background-image: url(../assets/img/product/2/7.jpg);
         }
         .slide-8 {
-          background-image: url(../assets/img/product/product16.png);
+          background-image: url(../assets/img/product/2/8.jpg);
+        }
+        .slide-9 {
+          background-image: url(../assets/img/product/2/9.jpg);
+        }
+        .slide-10 {
+          background-image: url(../assets/img/product/2/10.png);
+        }
+        .slide-11 {
+          background-image: url(../assets/img/product/2/12.png);
+        }
+        .slide-12 {
+          background-image: url(../assets/img/product/2/13.png);
+        }
+        .slide-13 {
+          background-image: url(../assets/img/product/2/14.png);
+        }
+        .slide-14 {
+          background-image: url(../assets/img/product/2/15.png);
         }
       }
     }

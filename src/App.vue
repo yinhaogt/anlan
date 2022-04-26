@@ -14,7 +14,7 @@
         >
           <el-menu-item index="/">首页</el-menu-item>
           <el-menu-item index="/product">产品中心</el-menu-item>
-          <el-menu-item index="/case">经典案例</el-menu-item>
+          <el-menu-item index="/case">技术中心</el-menu-item>
           <el-menu-item index="/goin">走进安澜</el-menu-item>
           <el-menu-item index="/join">加入我们</el-menu-item>
         </el-menu>
@@ -76,7 +76,7 @@
             </li>
             <li>
               <p>联系我们</p>
-              <span>邮箱：xiaowei.hong@szalign-tech.com</span>
+              <span>邮箱：xiaowei.hong@szalign-tech.com,zhenhui.wu@szalign-tech.com</span>
               <span>电话：0553-2831006</span>
               <span>地址：安徽省芜湖市鸠江区永镇路196号</span>
             </li>
@@ -127,7 +127,7 @@ body {
   justify-content: space-between;
   align-content: center;
   .logo {
-    width: 167px;
+    width: 173px;
     padding: 10px 0;
     img {
       width: 100%;
